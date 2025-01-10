@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 
 const Login = () => {
-  const {logIn,setUser} = useContext(AuthContext)
+  const { logIn, setUser } = useContext(AuthContext)
+  const navigate = useNavigate()
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -13,14 +14,15 @@ const Login = () => {
     const password = form.password.value
 
     // console.log({email, password})
-    logIn(email,password)
-    .then((result)=> {
-      console.log(result.user)
-      setUser(result.user)
-    })
-    .catch(error => {
-      alert(error.code)
-    })
+    logIn(email, password)
+      .then((result) => {
+        console.log(result.user)
+        setUser(result.user)
+        navigate('/')
+      })
+      .catch(error => {
+        alert(error.code)
+      })
   }
   return (
     <div className="min-h-screen flex justify-center items-center ">
