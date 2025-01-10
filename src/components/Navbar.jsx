@@ -22,7 +22,7 @@ const Navbar = () => {
                     user && user.email? 
                     <button onClick={logOut} className="btn btn-neutral rounded-none">logOut</button>
                     :
-                    <Link to={'auth/login'} className="btn btn-neutral rounded-none">Login</Link>
+                    <Link to={'/auth/login'} className="btn btn-neutral rounded-none">Login</Link>
 
                 }
             </div>

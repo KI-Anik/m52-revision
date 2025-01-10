@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 
 const AuthLayout = () => {
     return (
-        <div className="bg-[#f3f3f3]">
+        <div className="font-poppins bg-[#f3f3f3]">
             <Navbar></Navbar>
             <Outlet></Outlet>
         </div>

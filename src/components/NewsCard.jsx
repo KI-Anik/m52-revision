@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 const NewsCard = ({ news }) => {
+
   return (
     <div className="card mb-3 bg-base-100 shadow-xl">
       <figure>
-        <img src={news.thumbnail_url} alt="Thumbnail" className="rounded-t-xl" />
+        <img src={news.thumbnail_url} className=" rounded-t-xl" />
       </figure>
       <div className="card-body">
         <h2 className="card-title text-xl font-bold">{news.title}</h2>
@@ -23,7 +26,7 @@ const NewsCard = ({ news }) => {
           <div className="badge badge-outline">
             <span className="font-medium">{news.rating.badge}</span> ({news.rating.number})
           </div>
-          <button className="btn btn-sm btn-primary">Read More</button>
+          <Link to={`/news/${news._id}`} className="btn btn-sm btn-primary">Read More</Link>
         </div>
       </div>
     </div>
